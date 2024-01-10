@@ -18,6 +18,11 @@ spec:
           env: 
             - name: AUTH_ADDRESS
               value: "auth-service.default"
-              # value: "10.102.68.250"
             - name: TASKS_FOLDER
               value: tasks
+          volumeMounts:
+            - name: tasks
+              mountPath: /app/tasks
+      volumes:
+        - name: tasks
+          emptyDir: {}
